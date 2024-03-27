@@ -42,17 +42,17 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "build": "npm run clean-dist && cross-env NODE_ENV=production webpack --mode production --config=config/webpack/webpack.prod.config.ts",
-    "staging-build": "npm run clean-dist && cross-env NODE_ENV=staging webpack --mode production --config=config/webpack/webpack.staging.config.ts",
-    "clean-dist": "rimraf dist/*",
-    "clean-staging-dist": "rimraf staging_dist/*",
-    "start": "npm run start:dev",
-    "start:dev": "cross-env NODE_ENV=development webpack serve --config=config/webpack/webpack.dev.config.ts",
-    "dev": "docker-compose -f docker-compose.dev.yml up",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet"
-  },
+  "build": "npm run clean-dist && cross-env NODE_ENV=production webpack --mode production --config=config/webpack/webpack.prod.config.ts",
+  "staging-build": "npm run clean-dist && cross-env NODE_ENV=staging webpack --mode production --config=config/webpack/webpack.staging.config.ts",
+  "clean-dist": "rimraf dist/*",
+  "clean-staging-dist": "rimraf staging_dist/*",
+  "start": "npm run start:dev",
+  "start:dev": "cross-env NODE_ENV=development webpack serve --config=config/webpack/webpack.dev.config.ts",
+  "dev": "docker-compose -f docker-compose.dev.yml up",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
