@@ -1,0 +1,607 @@
+// Home
+.main-banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    .inner-banner{
+        height: 100%;
+        text-align: center;
+
+        h2{
+            font-size: 52px;
+            margin-bottom: 15px;
+
+            @media screen and (max-width: 767px) {
+                font-size: 32px;
+            }
+        }
+        p{
+            font-size: 18px;
+            margin-bottom: 25px;
+            @media screen and (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+        .btn{
+            font-size: 18px;
+            padding: 10px 30px;
+            border-radius: 40px;
+        }
+    }
+}
+
+// Calculator - Modal
+.modal-calculator{
+    bottom: -100%;
+    top: unset;
+    transition: all 0.5s;
+
+    &.show{
+        bottom: 0;
+        top: unset;
+    }
+    .modal-dialog{
+        align-items: flex-end;
+    }
+    .modal-body{
+        padding: 0;
+        position: relative;
+    }
+    .btn-modal-close{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 26px;
+        color: #5A6A85;
+        padding: 0;
+        cursor: pointer;
+        z-index: 9;
+    }
+
+    .calculator-outer{
+        display: flex; flex-direction: row;
+        min-height: 100vh;
+        background-color: $white_color;
+
+        .calculator-left{
+            flex: 0 0 450px;
+            max-width: 450px;
+            background-color: #F6F9FC;
+            padding: 30px;
+            position: relative;            
+
+            .calculator-sidebar{
+                position: relative;
+                height: 100%;
+                .sidebar-logo{
+                    margin-bottom: 50px;
+
+                    img{
+                        height: 50px;
+                    }
+                }
+                .sidebar-stepper{
+                    ul{
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        li{
+                            display: flex;
+                            margin: 0 0 30px;
+                            cursor: pointer;
+                            position: relative;
+
+                            .step-image {
+                                height: 46px;
+                                width: 46px;
+                                flex: 0 0 46px;
+                                max-width: 46px;
+                                background-color: $white_color;
+                                border: 1px solid #EAEFF4;
+                                text-align: center;
+                                border-radius: 6px;
+                                line-height: 28px;
+                                margin-right: 12px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                position: relative;
+                                z-index: 2;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                img{
+                                    height: 24px;
+                                    width: 100%;
+                                }
+                            }
+                            .step-done{
+                                background-color: $white_color;
+                                display: none;
+                                position: absolute;
+                                height: 36px;
+                                width: 36px;
+                                left: auto;
+                                right: auto;
+                                top: auto;
+                                align-items: center;
+                                justify-content: center;
+                                z-index: 2;
+                            }
+                            h6 {
+                                font-size: 18px;
+                                margin-bottom: 5px;
+                                color: #7C8FAC;
+                            }
+                            p {
+                                font-size: 14px;
+                                color: #7C8FAC;
+                            }
+        
+                            &:hover{
+                                h6 {
+                                    color: $info_color
+                                }
+                            }
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                height: 170%;
+                                border-left: 2px solid #DFE5EF;
+                                left: 22px;
+                                z-index: 1
+                            }
+        
+                            &.done {                                
+                                .step-done{
+                                    display: flex;
+                                } 
+                                &::after{
+                                    border-color: #68DDC6;
+                                }
+                                h6 {
+                                    color: #7C8FAC;
+                                }
+                                &:hover{
+                                    h6 {
+                                        color: #7C8FAC;
+                                    }
+                                }
+                            }
+                            &.active{
+                                .step-image {
+                                    img{
+                                        filter: brightness(0) saturate(100%) invert(17%) sepia(33%) saturate(564%) hue-rotate(178deg) brightness(96%) contrast(91%);
+                                    }
+                                }
+                                h6 {
+                                    color: #2A3547;
+                                }
+                                p{
+                                    color: #5A6A85;
+                                }
+                            }
+                            &:nth-last-child(1){
+                                margin-bottom: 0;
+                                &::after {
+                                    display: none
+                                }
+                            }
+                        }
+                    }
+                }
+                .sidebar-footer{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+
+
+                    ul{
+                        display: flex; flex-direction: row;
+                        justify-content: space-between;
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 0;
+
+                        li{
+                            color: #5A6A85;
+                            
+                            a{
+                                color: #5A6A85;
+
+                                i{
+                                    margin-right: 4px;
+                                }
+
+                                &:hover{
+                                    color: $info_color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .calculator-right{
+            flex: 0 0 calc(100% - 450px);
+            max-width: calc(100% - 450px);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator-card{
+            .card-calculator-header{
+                padding: 20px;
+                border-bottom: 5px solid #DFE5EF;     
+                position: relative;  
+                h5{
+                    margin-bottom: 0;
+                    font-size: 20px;
+                }
+                .card-calculator-line{
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    background-color: $info_color;
+                    height: 4px;
+                    transition: all 0.5s ease-out;
+                }
+            }
+            .card-calculator-body{
+                padding: 20px;
+                height: calc(100vh - 130px);
+                overflow-y: auto;
+            }
+            .card-calculator-footer{
+                padding: 10px 20px;
+                border-top: 1px solid #DFE5EF;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .btn{
+                    min-width: 140px;
+                    height: 40px;
+                }
+            }
+
+            .que-ans-container{                
+                .question-container{
+                    margin-bottom: 30px;
+                    color: #2A3547;
+                    width: 84%;
+
+                    h4{
+                        font-size: 28px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                .answer-container{
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0 -10px;
+
+                    .answer-col{
+                        flex: 0 0 25%;
+                        max-width: 25%;
+                        padding: 0 10px;
+
+                        @media screen and (min-width: 1500px) {
+                            flex: 0 0 20%;
+                            max-width: 20%;
+                        }
+
+                    }
+                    .card-answer{
+                        border: 2px solid #DFE5EF;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        cursor: pointer;
+                        position: relative;
+
+                        .card-image{
+                            background-color: #E8F5FD;
+                            padding: 15px;
+                            img{
+                                height: 92px;
+                            }
+                        }
+                        .card-body{
+                            padding: 15px;
+
+                            h6{
+                                color: #2A3547;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .ans-done{
+                            position: absolute;
+                            right: 12px;
+                            top: 12px;
+                            display: none;
+                        }
+
+                        &:hover{
+                            border-color: $info_color;
+                        }
+                        &.active{
+                            border-color: $info_color;
+
+                            .card-body{
+                                h6{
+                                    color: $info_color;
+                                }
+                            }
+                            .ans-done{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .chk-answer-container{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin: 0 -10px;
+                    width: 90%;
+
+                    @media screen and (min-width: 1500px) {
+                        width: 84%;
+                    }
+
+                    .chk-answer-col{
+                        flex: 0 0 33.333%;
+                        max-width: 33.333%;
+                        padding: 0 10px 10px;
+
+                        @media screen and (min-width: 1900px) {
+                            flex: 0 0 25%;
+                            max-width: 25%;
+                        }
+
+                    }
+                    .chk-answer-checkbox{
+                        position: absolute;
+                        right: 12px;
+                        top: 12px;
+                    }
+                    .card-answer{
+                        border: 2px solid #DFE5EF;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        text-align: center;
+                        cursor: pointer;
+                        position: relative;
+                        padding: 35px 25px;
+                        height: 100%;
+
+                        .card-image{
+                            padding: 0;
+                            margin-bottom: 20px;
+                            img{
+                                height: 70px;
+                            }
+                        }
+                        .card-body{
+                            padding: 0;
+                            h6{
+                                color: #5A6A85;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .ans-done{
+                            position: absolute;
+                            right: 12px;
+                            top: 12px;
+                            display: none;
+                        }
+
+                        &:hover{
+                            border-color: $info_color;
+                        }
+                        &.active{
+                            border-color: $info_color;
+
+                            .card-body{
+                                h6{
+                                    color: $info_color;
+                                }
+                            }
+                            .ans-done{
+                                display: block;
+                            }
+                        }
+                    }
+                    
+                }
+                .forms-answer-container{
+                    width: 600px;
+
+                    .forms-answer-header{
+                        display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-bottom: 10px;
+
+                        h6{
+                            color: $black_color;
+                            font-size: 16px;
+                            margin-bottom: 0;
+                        }
+                        .btn-icon{
+                            padding: 0;
+                            color: #5A6A85;
+                        }
+                    }
+                }
+            }
+
+            .add-more-records{
+                .btn{
+                    font-weight: 500;
+                    font-size: 16px;                
+                }
+            }
+        }
+
+        .estimated-total{
+            display: flex; flex-direction: row; align-items: center;
+            background-color: #E7F4FD;
+            padding: 12px;
+            border-radius: 10px; margin-bottom: 25px;
+
+            .estimated-total-left,
+            .estimated-total-right{
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .estimated-total-left{
+                h4{
+                    font-size: 22px;
+                    margin-bottom: 6px;
+                }
+                p{
+                    color: $info_color;
+                    font-size: 34px;
+                    font-weight: 800;
+                }
+            }
+            .estimated-total-right{
+                background-color: #E1EEF8;
+                border-radius: 10px;
+                padding: 20px; text-align: center;
+
+                i{
+                    color: $danger_color;
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+        .calculator-withholdings{
+            margin-bottom: 20px;
+
+            h6{
+                color: #2A3547;
+                margin-bottom: 16px;
+                font-size: 22px;
+            }
+        }
+        .estimated-total-refund{
+            .estimated-total-refund-top{
+                display: flex; flex-direction: row; justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+
+                h4{
+                    font-size: 22px;
+                    margin-bottom: 0px;
+                }
+                p{
+                    color: $info_color;
+                    font-size: 34px;
+                    font-weight: 800;
+                }
+            }
+        }
+        .highest-paying-job{
+            background-color: $info_color;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+
+            .highest-paying-job-header{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 15px;
+
+                h4,p{
+                    font-size: 22px;
+                    color: $white_color;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+            }
+            .highest-paying-job-body{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .highest-paying-job-left{
+                    background-color: $white_color;
+                    padding: 15px;
+                    border-radius: 10px;
+                    width: calc(100% - 300px);
+
+                    .withholding-period-header{
+                        display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-bottom: 12px;
+
+                        p{
+                            color: #2A3547;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                        }
+                        h5{
+                            color: $info_color;
+                            margin-bottom: 0;
+                            font-size: 22px;
+                        }
+                    }
+                    .withholding-period-body{
+                        .range-slider{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            p{
+                                margin-bottom: 0;
+                                color: #5A6A85;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .highest-paying-job-right{
+                    border: 1px solid #68DDC6;
+                    padding: 12px;
+                    color: $white_color;
+                    border-radius: 10px;
+                    width: 280px;
+
+                    p{
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+                    h4{
+                        font-size: 32px;
+                        margin-top: 0px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        .calculator-button-group{
+            display: flex; flex-direction: row; gap: 8px; margin-top: 35px;
+
+            .btn{
+                min-width: 140px;
+                height: 40px;
+            }
+        }
+    }
+    .card-calculator-final{
+        height: calc(100vh - 69px);
+    }
+}

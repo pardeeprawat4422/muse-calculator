@@ -1,0 +1,18 @@
+.modal-open{
+    .modal-backdrop{
+        &.show{
+            background-color: $white_color;
+        }
+    }
+}
+.modal{
+    border: 0;
+
+    .btn-modal-close{
+        border: 0;
+        outline: 0;
+        &:hover{
+            color: $danger_color;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px; color: $text_color;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700
+}
+
+img {
+    max-width: 100%
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+.error-msg {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $danger_color;
+    font-weight: 500;
+}
+.success-msg {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $success_color;
+    font-weight: 500;
+}
+.file-name{
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $primary_color;
+    font-weight: 500;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.note-msg{
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $text_color;
+    font-weight: 500;
+}
+
+b {
+    font-weight: 700;
+}
+p:nth-last-child(1){ margin-bottom: 0; }
+.cursor-pointer{ cursor: pointer; }

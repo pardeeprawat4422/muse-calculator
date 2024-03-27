@@ -1,0 +1,129 @@
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="homemortgageinterest" value="Home mortgage interest" />
+                                <label htmlFor="homemortgageinterest"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={charitableDonationsSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>Charitable donations</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="charitabledonations" value="Charitable donations" />
+                                <label htmlFor="charitabledonations"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={stateLooalTaxesSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>State/Local taxes</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="statelocaltaxes" value="State/Local taxes" />
+                                <label htmlFor="statelocaltaxes"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={medicalExpensesSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>Medical expenses</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="medicalexpenses" value="Medical expenses" />
+                                <label htmlFor="medicalexpenses"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer active">
+                            <div className="card-image">
+                              <img src={studentLoanInterestSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>Student loan interest</h6>
+                            </div>
+
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="studentloaninterest2" value="Student loan interest" />
+                                <label htmlFor="studentloaninterest2"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={iraContributionSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>IRA Contribution</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="iracontribution2" value="IRA Contribution" />
+                                <label htmlFor="iracontribution2"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={otherDeductionsSVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>Other deductions</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="otherdeductions" value="Other deductions" />
+                                <label htmlFor="otherdeductions"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="chk-answer-col">
+                          <div className="card-answer">
+                            <div className="card-image">
+                              <img src={noneApplySVG} alt="Muse" />
+                            </div>
+                            <div className="card-body">
+                              <h6>None apply</h6>
+                            </div>
+                            <div className="chk-answer-checkbox">
+                              <div className="checkbox checkbox-primary checkbox-small">
+                                <input type="checkbox" className="filled-in" id="noneapply3" value="None Apply" />
+                                <label htmlFor="noneapply3"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-calculator-footer d-none">
+                    <Button variant="white" className="btn-icon-text"><i className="bi bi-arrow-left"></i>Back</Button>
+                    <Button variant="primary">Next</Button>
+                  </div>
